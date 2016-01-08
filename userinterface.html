@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS input en output</title>
+</head>
+
+<body>
+<p id="helloText">Hier komt een melding te staan</p>
+<button id="clickButton">click me</button>
+
+<p>Druk F12 en open de console-tab voordat je op de knop klikt.</p>
+
+<script> 
+var myButton = document.getElementById("clickButton");
+var myText = document.getElementById("helloText");
+
+myButton.addEventListener('click', doSomething, false)
+
+function doSomething() {
+	var invoer = prompt("Typ wat");
+	window.alert("Dit heb je getypt: "+invoer);
+	confirm("Confirm melding: "+invoer);
+	window.alert("Nu zetten we wat op de plek waar nu \"Hier komt een melding te staan\" staat");
+	myText.textContent = "<b>HTML-opmaak in je HTML pagina zetten?</b>";
+	window.alert("Nu anders...");
+	myText.innerHTML = "<b>Zo </b><i>gaat het </i>wél";
+	window.alert("Let nu op jouw console");
+	console.log(invoer);
+}
+</script>
+
+</body>
+</html>
